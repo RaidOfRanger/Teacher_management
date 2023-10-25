@@ -1,0 +1,33 @@
+<mat-card class="container">
+    
+    <form class="form-style" #register="ngForm" (submit)="register_data(register.value)">
+        <div class="form-group">
+            <h2>register user</h2>
+            <div *ngIf="check_errorget">
+                <a class="danger">Email already registered</a>
+            </div>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput name="Username" type="text" [(ngModel)]="registerdata.Username">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput name="Email" type="email" [(ngModel)]="registerdata.Email">
+                
+            </mat-form-field>
+            
+            <br>
+            
+            <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput name="Pass" type="password" [(ngModel)]="registerdata.Pass">
+            </mat-form-field>
+            <br>
+            <button mat-raised-button class="example-button-row">Submit</button>
+        </div>
+
+
+    </form>
+</mat-card>

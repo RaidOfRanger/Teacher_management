@@ -1,0 +1,21 @@
+
+<mat-card class="container">
+
+    <form class="form-style" #login="ngForm" (submit)="checklogin(login.value)">
+        <div class="form-group">
+            <h2>Admin Login</h2>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput name="username" type="email" [(ngModel)]="logindata.Username">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput name="pass" type="password" [(ngModel)]="logindata.Pass">
+            </mat-form-field>
+            <br>
+            <button mat-raised-button class="example-button-row" >Submit</button><br>
+        </div>
+
+    </form>
+</mat-card>

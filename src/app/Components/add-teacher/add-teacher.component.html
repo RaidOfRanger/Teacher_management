@@ -1,0 +1,50 @@
+<p>add-teacher works!</p>
+<mat-card class="container">
+    <form class="form-style" #teachers="ngForm" novalidate (ngSubmit)="onSubmit(teachers.value)">
+        <!-- {{teachers.value | json}} -->
+        <div class="form-group">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput name = "Fname" [(ngModel)]="addT.Fname" >
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput name = "Lname" [(ngModel)]="addT.Lname">
+        </mat-form-field>
+        <br>
+        <mat-form-field class=".container">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput name = "DOB" [matDatepicker]="picker" [(ngModel)]="addT.DOB" >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconPrefix [for]="picker" matSuffix="true"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-select name = "Gender" [(ngModel)] = "addT.Gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Experience</mat-label>
+            <input matInput type="number" name = "EXP" [(ngModel)]="addT.EXP">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Subject</mat-label>
+            <input matInput name = "subject" [(ngModel)]="addT.subject">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Status</mat-label>
+            <input matInput name = "status" [(ngModel)]="addT.status">
+        </mat-form-field><br>
+        <button mat-raised-button class="example-button-row" color="primary">Submit</button>
+    </div>
+    </form>
+
+</mat-card>
